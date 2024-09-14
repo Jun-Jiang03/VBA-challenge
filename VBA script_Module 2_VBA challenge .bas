@@ -1,11 +1,18 @@
 Attribute VB_Name = "Module1"
+
 Sub CalculateQuarterChange():
+'below function "For Each ws in Worksheets" is used to repeat the following VBA in each sheets.
+    'for every ticker block we need j to seperate from row order or current row i.
+    'also need TickerCount to fill Ticker row in the seperate table.
 
     For Each ws In Worksheets
     
         Dim WorksheetName As String
+        'Current row
         Dim i As Long
+        'Start row of ticker block
         Dim j As Long
+        'Index counter to fill Ticker row
         Dim TickerCount As Long
         Dim LastRowA As Long
         Dim PercentChange As Double
@@ -60,6 +67,8 @@ Sub CalculateQuarterChange():
 End Sub
 
 Sub SumarryTable():
+'Use Excel Function Min,Max to find value and use Function Match to locate the ticker with the extrem value.
+
   For Each ws In Worksheets
     
         Dim WorksheetName As String
